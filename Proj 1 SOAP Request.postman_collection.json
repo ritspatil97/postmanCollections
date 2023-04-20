@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "0370a3f1-6494-4415-85f4-520e3e7dfb3a",
+		"name": "Proj 1 SOAP Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26846453"
+	},
+	"item": [
+		{
+			"name": "SOAP No to words",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//test cases \r",
+							"// we can verify that 200 Ok should come TC1 \r",
+							"pm.test(\"Tc 1 Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"//TC 2 - body  - five hundred and one \r",
+							"pm.test(\"TC 2 - body  - five hundred and one\", function () {\r",
+							"    pm.expect(pm.response.text().to.include(\"five\"));\r",
+							"});\r",
+							"\r",
+							"//Tc 3 - m:NumberToWordsResponse Should Be present \r",
+							"//TC 4 - header Response should be text/xml"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n<soap:Body>\r\n<NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n    <ubiNum>501</ubiNum>\r\n    </NumberToWords>\r\n</soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/numberconversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"numberconversion.wso"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

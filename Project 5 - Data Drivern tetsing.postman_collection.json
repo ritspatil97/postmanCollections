@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "4a46a7d0-ef93-4ccb-9e0f-cfe3d05f8fdc",
+		"name": "Project 5 - Data Drivern tetsing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26846453"
+	},
+	"item": [
+		{
+			"name": "login wingify",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"details enterd \", function () {\r",
+							"\r",
+							"    var username =pm.iterationData.get(\"username\");\r",
+							"    var password = pm.iterationData.get(\"password\");\r",
+							"    console.log(username);\r",
+							"    console.log(password); \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "app.vwo.com"
+					},
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "_vwo_uuid_v2=D749A87D25D7825B71104B52B1E3963F7|289ab7208221872e5658f55dda295a00; _vwo_ssm=1; _vis_opt_s=1%7C; _vis_opt_test_cookie=1; _vwo_uuid=D749A87D25D7825B71104B52B1E3963F7; _gcl_au=1.1.1603942293.1681876839; wgs_uuid=D67F9ECCFC4FC280D6B178A9CB602FDE5; wgs_lt_uid=; wgs_url=https://vwo.com/free-trial/?utm_medium=website&utm_source=login-page&utm_campaign=mof_eg_loginpage; wgs_ref=https://app.vwo.com/; wgs_src=direct; wgs_time=1681876858; wgs_uid=; _vwo_utm_campaign=mof_eg_loginpage; _vis_opt_exp_1126_combi=1; _vis_opt_exp_1140_combi=2; _vis_opt_exp_1026_combi=2; _mkto_trk=id:007-HHD-895&token:_mch-vwo.com-1681876863397-55638; _fbp=fb.1.1681876864735.1132013965; _rdt_uuid=1681876864900.c2566050-6918-4ff8-8d0f-a08ec882bbe4; wgs_lt_ref=https://www.google.com/; wgs_lt_url=https://vwo.com/; wgs_lt_src=organic; wgs_lt_time=1681973513; _vwo_utm_medium=Organic; _vwo_utm_source=google; _vwo_uuid_v2=DE8C9BA0A7F3E93FD58A03FA34F662B0A|c46845d4d06141e0dfbb34997ab2bc59; _ga=GA1.2.1620208608.1681876839; _gid=GA1.2.358566089.1681973520; OptanonConsent=isIABGlobal=false&datestamp=Thu+Apr+20+2023+12%3A22%3A03+GMT%2B0530+(India+Standard+Time)&version=6.32.0&hosts=&genVendors=V11%3A0%2CV9%3A0%2CV19%3A0%2CV13%3A0%2CV4%3A0%2CV1%3A0%2CV12%3A0%2CV5%3A0%2CV15%3A0%2CV3%3A0%2CV10%3A0%2CV17%3A0%2CV18%3A0%2CV2%3A0%2CV7%3A0%2CV22%3A0%2CV20%3A0%2CV14%3A0%2CV16%3A0%2CV23%3A0%2C&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&AwaitingReconsent=false; OptanonAlertBoxClosed=2023-04-20T06:52:03.260Z; _uetsid=dc443ac0df4711ed85983d9de7645b45; _uetvid=ce4cabf0de6611ed8053cd1fdc4e7923; _ga_7Q47MREGKX=GS1.1.1681973519.2.1.1681973530.0.0.0; _vwo_ds=3%3Aa_1%2Ct_1%3A0%241681876837%3A55.76929988%3A867_0_1_96678_6%2C869_0_1_96678_9%2C1143_0_1_96678_1%3A42_1%2C22_1%2C16_1%2C48_1%2C20_1%2C9_1%2C152_2%2C155_2%2C1_2%2C156_1%2C161_2%2C162_1%2C170_1%2C171_1%2C181_1%2C182_1%2C183_1%2C184_1%2C185_1%2C186_1%2C195_1%2C197_1%2C199_1%2C200_1%2C203_1%2C13_1%3A627_1%2C172_1%2C129_1%2C28_1%2C23_1%2C15_1%2C14_1%3A0; ajs_user_id=719463; ajs_anonymous_id=6e01373c-b6e3-4147-887b-fc2fa9430c14; _vwo_sn=96678%3A14%3Ar3.visualwebsiteoptimizer.com%3A14%3A1%3Areferrer%3Dhttps%3A%2F%2Fwww.google.com%2F"
+					},
+					{
+						"key": "origin",
+						"value": "https://app.vwo.com"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "referer",
+						"value": "https://app.vwo.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"{{username}}\",\"password\":\"{{password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "https://app.vwo.com/login",
+					"protocol": "https",
+					"host": [
+						"app",
+						"vwo",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

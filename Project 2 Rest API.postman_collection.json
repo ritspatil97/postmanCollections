@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "8745e7ba-64c0-4f81-b7e6-6bbe0c3b0cc6",
+		"name": "Project 2 Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26846453"
+	},
+	"item": [
+		{
+			"name": "GET Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://restful-booker.herokuapp.com/booking",
+					"protocol": "http",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
